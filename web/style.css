@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e7e7e7;
+  color: #333333;
+  font-size: 15px;
+  line-height: 2;
+}
+
+body , html {
+    height: 100%;
+}
+
+/*デフォルトリセット*/
+p,h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  margin :0;
+  padding: 0;
+}
+
+a {
+  color: #156b6e;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #156b6e;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+  /*appearance: none;*/
+}
+
+/*パーツ*/
+.textbox {
+  height: 25px;
+  font-size: 20px;
+}
+
+.icon::before {
+  content: "";
+  padding-right: 10px;
+  border-left: 7px solid #0a3326;
+}
+
+button {
+  border:1px solid #0a3326;
+  border-radius: 3px;
+  color: #0a3326;
+  font-size: 20px;
+  width: 80px;
+  height: 30px;
+}
+
+button:hover {
+  background-color: #0a3326;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+#result_table thead {
+  border-spacing: 0;
+  background-color: #0a3326;
+  color: #ffffff;
+}
+
+#result_table tbody *{
+  border-spacing: 0;
+  padding-left: 10px;
+}
+
+#result_table tr:nth-child(even){
+    background:#F2F2F2;
+}
+
+.player_table {
+  border-collapse: separate;
+  border-spacing: 0 3px;
+}
+
+.player_table th {
+  background-color: #757575;
+  color: #ffffff;
+  border: 1px solid #757575;
+  border-radius: 3px 0 0 3px;
+}
+
+.player_table td {
+  padding-left: 10px;
+  border: 1px solid #757575;
+  border-radius: 0 3px 3px 0;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+header {
+  position: fixed;            /* ヘッダーの固定 */
+  top: 0px;                   /* 位置(上0px) */
+  left: 0px;                  /* 位置(右0px) */
+  width: 100%;                /* 横幅100%　*/
+  height: 60px;
+  /*margin: 0 auto;は必ずwidthの後*/
+  margin: 0 auto;
+  background-color: #0a3326;
+  color: #ffffff;
+  padding-left: 20px;
+}
+
+#wrap {
+  height: auto;
+}
+.content {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-left: 20px;
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 0;
+  background-color: #767671;
+  position: absolute;
+  bottom: 0;
+}
+
+h2 {
+  font-size: 40px;
+  border-bottom: 2px solid #0a3326;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.tier {
+  font-size: 20px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-style: italic;
+  width: 480px;
+}
