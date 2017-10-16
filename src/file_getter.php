@@ -1,4 +1,13 @@
 <?php
+  // 格納用のフォルダを削除し、再作成
+  mkdir("./pdf", 0700);
+  echo 'created pdf'."\n";
+  mkdir("./pdf/schedule", 0700);
+  echo 'created schedule'."\n";
+  mkdir("./pdf/next_game", 0700);
+  echo 'created next_game'."\n";
+  mkdir("./pdf/mvp", 0700);
+  echo 'created mvp'."\n";
   // コンテンツを取得
   $pdfs = [];
   $ch = curl_init();

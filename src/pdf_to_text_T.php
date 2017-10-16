@@ -1,4 +1,8 @@
 <?php
+
+mkdir("./text/mvp", 0700);
+echo 'created mvp'."\n";
+
 foreach(glob('./pdf/mvp/*.pdf') as $path){
   if(is_file($path)){
     $pdf = basename( $path );

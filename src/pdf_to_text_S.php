@@ -1,4 +1,8 @@
 <?php
+
+mkdir("./text/next_game", 0700);
+echo 'created next_game'."\n";
+
 foreach(glob('./pdf/next_game/*.pdf') as $path){
   if(is_file($path)){
     $pdf = basename( $path );

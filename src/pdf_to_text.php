@@ -1,4 +1,10 @@
 <?php
+//まず格納先を作る
+mkdir("./text", 0700);
+echo 'created text'."\n";
+mkdir("./text/schedule", 0700);
+echo 'created schedule'."\n";
+
 foreach(glob('./pdf/schedule/*.pdf') as $path){
   if(is_file($path)){
     $pdf = basename( $path );
