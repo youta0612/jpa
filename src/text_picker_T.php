@@ -48,14 +48,14 @@ foreach(glob('./text/mvp/*.txt') as $path){
         // 発表日付が存在する行だけ取り出す
         preg_match($reg_ymd, $data[$i], $pre_ymd);
         $spl_ymd = preg_split("/\//", $pre_ymd[0]);
-        $ymd = $spl_ymd[2].'/'.$spl_ymd[1].'/'.$spl_ymd[0];
+        $ymd = $spl_ymd[2].'/'.$spl_ymd[0].'/'.$spl_ymd[1];
         $array[$incliments]['common_inf']['ymd'] = $ymd;
 
-      } else if ( preg_match($reg_division ) ) {
+      } else if ( preg_match($reg_division, $data[$i] ) ) {
         // ディヴィジョンIDが存在する行
         preg_match($reg_division, $data[$i], $pre_div);
         $division_id = preg_split("/ +/", $pre_div[0]);
-        $array[$incliments]['common_inf']['division_id'] = $division_id;
+        $array[$incliments]['common_inf']['division_id'] = $division_id[1];
       }
     }
     $incliments ++;
