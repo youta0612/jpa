@@ -51,6 +51,11 @@ foreach(glob('./text/mvp/*.txt') as $path){
         $ymd = $spl_ymd[2].'/'.$spl_ymd[1].'/'.$spl_ymd[0];
         $array[$incliments]['common_inf']['ymd'] = $ymd;
 
+      } else if ( preg_match($reg_division ) ) {
+        // ディヴィジョンIDが存在する行
+        preg_match($reg_division, $data[$i], $pre_div);
+        $division_id = preg_split("/ +/", $pre_div[0]);
+        $array[$incliments]['common_inf']['division_id'] = $division_id;
       }
     }
     $incliments ++;
@@ -100,10 +105,11 @@ try {
         echo $val['points']."\n";
         echo $val['win percentage']."\n";
         echo $div['common_inf']['ymd']."\n";
-        $sql = 'insert into jpa.t_member_result (member_id, season, mp, mw, points, win_percentage, ymd)
-        	values (?, ?, ?, ?, ?, ?, ?)
+        echo $div['common_inf']['division_id']."\n";
+        $sql = 'insert into jpa.t_member_result (member_id, season, mp, mw, points, win_percentage, ymd, division_id)
+        	values (?, ?, ?, ?, ?, ?, ?, ?)
           ON DUPLICATE KEY UPDATE
-          season=?, mp=?, mw=?, points=?, win_percentage=?, ymd=?';
+          season=?, mp=?, mw=?, points=?, win_percentage=?, ymd=?, division_id=?';
         echo $sql."\n";
         $stmt = $dbh->prepare($sql);
         echo "prepared statement.\n";
@@ -116,6 +122,7 @@ try {
         $bind[] = $val['points'];
         $bind[] = $val['win percentage'];
         $bind[] = $div['common_inf']['ymd'];
+        $bind[] = $div['common_inf']['division_id'];
         // for UPDATE
         $bind[] = $div['common_inf']['season'];
         $bind[] = $val['mp'];
@@ -123,6 +130,7 @@ try {
         $bind[] = $val['points'];
         $bind[] = $val['win percentage'];
         $bind[] = $div['common_inf']['ymd'];
+        $bind[] = $div['common_inf']['division_id'];
         echo "bind parameter: \n";
         var_dump($bind);
         $stmt->execute($bind);
