@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.min.js"></script>
+    <script src="team.js"></script>
+    <title>JPA Dictionary|Player Infomation</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="./index.html" style="color: white;">JPA Dictionary</a></h1>
+    </header>
+    <div id="wrap">
+      <div class="content">
+        <h2>Team Infomation</h2>
+        <section>
+          <h3 class="icon">チーム - <span class="t_nm"></span></h3>
+          <h4><span class="season"></span> <span class="division"></span></h4>
+        </section>
+        <section>
+          <h4>メンバー</h4>
+          <table id="result_table">
+            <thead>
+              <th width="120px">Player ID</th>
+              <th width="180px">Player Name</th>
+              <th width="120px">Skill Level</th>
+              <th width="120px">MP</th>
+              <th width="120px">MW</th>
+              <th width="120px">Points</th>
+              <th width="150px">Win Percentage</th>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h3 class="icon">データ - 獲得ポイント<span class="season"></span></h3>
+          <div class="graph">
+            <canvas id="myBarChart"></canvas>
+          </div>
+        </section>
+        <section>
+          <button type="button" class="btn">BACK</button>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
